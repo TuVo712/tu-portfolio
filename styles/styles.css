@@ -1233,3 +1233,10 @@ h2 {
         padding: 16px;
     }
 }
+
+/* Personalised footer signatures */
+.footer-symbol {
+    font-size: 1.3em;
+    color: #e69cb6;
+    vertical-align: -.04em;
+}
