@@ -925,9 +925,11 @@ h2 {
     text-decoration: none;
     cursor: pointer;
 }
+
 .project-card-link:hover {
     color: inherit;
 }
+
 .project-card-link:focus-visible {
     outline: 3px solid #7d58ba;
     outline-offset: 5px;
@@ -936,16 +938,298 @@ h2 {
 
 /* Homepage back-to-top control */
 .home-to-top {
-  position: fixed; right: 26px; bottom: 26px; z-index: 30;
-  width: 46px; height: 46px; display: grid; place-items: center;
-  border-radius: 50%; background: #f5d5e4; color: var(--ink);
-  border: 1px solid #e9b7cd; box-shadow: 0 8px 22px #322b3122;
-  font-size: 25px; font-weight: 800; text-decoration: none;
-  opacity: 0; visibility: hidden; transform: translateY(10px);
-  transition: opacity .2s, transform .2s, visibility .2s;
+    position: fixed;
+    right: 26px;
+    bottom: 26px;
+    z-index: 30;
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #f5d5e4;
+    color: var(--ink);
+    border: 1px solid #e9b7cd;
+    box-shadow: 0 8px 22px #322b3122;
+    font-size: 25px;
+    font-weight: 800;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity .2s, transform .2s, visibility .2s;
 }
-.home-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-.home-to-top:hover { background: #eec2d7; }
-.home-to-top:focus-visible { outline: 3px solid #875a96; outline-offset: 3px; }
-@media (max-width: 850px) { .home-to-top { right: 16px; bottom: 18px; } }
-@media (prefers-reduced-motion: reduce) { .home-to-top { transition: none; } }
+
+.home-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.home-to-top:hover {
+    background: #eec2d7;
+}
+
+.home-to-top:focus-visible {
+    outline: 3px solid #875a96;
+    outline-offset: 3px;
+}
+
+@media (max-width: 850px) {
+    .home-to-top {
+        right: 16px;
+        bottom: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-to-top {
+        transition: none;
+    }
+}
+
+/* Collapsible project gallery: all projects visible on arrival. */
+.work-instruction {
+    margin: 0 0 20px;
+    color: #91647f;
+    font-size: .95rem;
+}
+
+.project-tiles {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.project-tile {
+    font: inherit;
+    color: #342c32;
+    text-align: left;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 19px 18px;
+    min-height: 138px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.project-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(56, 35, 50, .13);
+}
+
+.project-tile:focus-visible {
+    outline: 3px solid #7554aa;
+    outline-offset: 3px;
+}
+
+.project-tile[aria-expanded="true"] {
+    border-color: var(--tile-accent);
+    box-shadow: 0 6px 20px rgba(56, 35, 50, .09);
+}
+
+.tile-top,
+.tile-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.tile-top {
+    align-items: flex-start;
+}
+
+.tile-name {
+    font-size: 1.05rem;
+    font-weight: 750;
+    line-height: 1.3;
+}
+
+.tile-symbol {
+    color: var(--tile-accent);
+    font-size: 2.15rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.tile-bottom {
+    color: #62555e;
+    font-size: .83rem;
+}
+
+.tile-chevron {
+    font-size: 1.5rem;
+    line-height: .7;
+    transition: transform .2s ease;
+}
+
+.project-tile[aria-expanded="true"] .tile-chevron {
+    transform: rotate(180deg);
+}
+
+.tile-learning {
+    background: #e8ddfa;
+    --tile-accent: #aa79ce;
+}
+
+.tile-deploy {
+    background: #ffe5ad;
+    --tile-accent: #d58b70;
+}
+
+.tile-store {
+    background: #d0e2c7;
+    --tile-accent: #de83a8;
+}
+
+.tile-career {
+    background: #f5e4f1;
+    --tile-accent: #d78aab;
+}
+
+.project-preview {
+    margin-top: 22px;
+}
+
+.project-preview-item .project-card {
+    width: 100%;
+}
+
+.project-preview-item .project-art {
+    height: 245px;
+}
+
+.project-preview-item .project-card:hover {
+    transform: none;
+}
+
+.project-preview-item .project-body {
+    padding: 26px;
+}
+
+.project-preview-item[hidden],
+.project-preview[hidden] {
+    display: none !important;
+}
+
+/* Match the original coral asterisk on the Cloud case-study hero. */
+.art-deploy .art-symbol {
+    color: #d58b70;
+    opacity: 1;
+}
+
+.art-learning .art-symbol {
+    color: #aa79ce;
+    opacity: 1;
+}
+
+.art-store .art-symbol {
+    color: #de83a8;
+    opacity: 1;
+}
+
+.art-career .art-symbol {
+    color: #d78aab;
+    opacity: 1;
+}
+
+@media (max-width: 850px) {
+    .project-tiles {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .project-tile {
+        padding: 14px;
+        min-height: 125px;
+    }
+
+    .tile-name {
+        font-size: .94rem;
+    }
+
+    .tile-symbol {
+        font-size: 1.8rem;
+    }
+
+    .tile-bottom {
+        font-size: .75rem;
+    }
+
+    .project-preview-item .project-art {
+        height: 185px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .project-tile,
+    .tile-chevron {
+        transition: none;
+    }
+}
+
+/* Compact gallery previews: preserve the original illustrations. */
+.project-preview-item .project-art {
+    height: 165px;
+}
+
+.project-preview-item .project-body {
+    padding: 18px 24px 20px;
+}
+
+.project-preview-item .project-body h3 {
+    margin-bottom: 5px;
+    font-size: 21px;
+}
+
+.project-preview-item .project-body>p {
+    margin-bottom: 6px;
+}
+
+.project-preview-item .project-body .project-note {
+    margin-bottom: 12px;
+}
+
+.project-preview-item .project-card {
+    display: block;
+}
+
+.project-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 15px;
+    border-radius: 999px;
+    background: #342c32;
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+    transition: background .2s ease;
+}
+
+.project-card-link:hover .project-cta,
+.project-card-link:focus-visible .project-cta {
+    background: #805673;
+}
+
+.project-card-link:focus-visible {
+    outline: 3px solid #805673;
+    outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+    .project-preview-item .project-art {
+        height: 150px;
+    }
+
+    .project-preview-item .project-body {
+        padding: 16px;
+    }
+}

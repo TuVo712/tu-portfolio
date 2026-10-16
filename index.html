@@ -48,7 +48,27 @@
           <p class="eyebrow">A LITTLE BIT OF EVERYTHING</p>
           <p class="section-description">From technical systems to more accessible experiences — here's what I've been exploring.</p>
         </div>
-        <div class="project-grid">
+        <p class="work-instruction">↗ Pick a project to take a closer look ✨</p>
+        <div class="project-tiles" aria-label="Choose a project">
+          <button type="button" class="project-tile tile-learning" aria-expanded="false" aria-controls="project-preview" data-project="0">
+            <span class="tile-top"><span class="tile-name">AI Learning Companion</span><span class="tile-symbol" aria-hidden="true">✦</span></span>
+            <span class="tile-bottom"><span>UX + Accessibility</span><span class="tile-chevron" aria-hidden="true">⌄</span></span>
+          </button>
+          <button type="button" class="project-tile tile-deploy" aria-expanded="false" aria-controls="project-preview" data-project="1">
+            <span class="tile-top"><span class="tile-name">Cloud Deployment</span><span class="tile-symbol" aria-hidden="true">✳</span></span>
+            <span class="tile-bottom"><span>Cloud + DevOps</span><span class="tile-chevron" aria-hidden="true">⌄</span></span>
+          </button>
+          <button type="button" class="project-tile tile-store" aria-expanded="false" aria-controls="project-preview" data-project="2">
+            <span class="tile-top"><span class="tile-name">Clothing Store</span><span class="tile-symbol" aria-hidden="true">✿</span></span>
+            <span class="tile-bottom"><span>Systems Design</span><span class="tile-chevron" aria-hidden="true">⌄</span></span>
+          </button>
+          <button type="button" class="project-tile tile-career" aria-expanded="false" aria-controls="project-preview" data-project="3">
+            <span class="tile-top"><span class="tile-name">Career Companion</span><span class="tile-symbol" aria-hidden="true">♡</span></span>
+            <span class="tile-bottom"><span>AI + Inclusive Design</span><span class="tile-chevron" aria-hidden="true">⌄</span></span>
+          </button>
+        </div>
+        <div id="project-preview" class="project-preview" hidden>
+          <div class="project-preview-item" data-preview="0" hidden>
           <a class="project-card project-card-link" href="pages/ai-learning-companion.html" aria-label="View AI Learning Companion case study">
             <div class="project-art art-learning"><span class="art-symbol" aria-hidden="true">✦</span>
               <div class="mock-window">
@@ -64,8 +84,11 @@
               <h3>AI Learning Companion</h3>
               <p>Exploring contextual learning support for learners with ADHD, with explanations, hints, and understanding checks.</p>
               <p class="project-note">Interactive prototype · predefined responses</p>
+              <span class="project-cta">View case study <span aria-hidden="true">↗</span></span>
             </div>
           </a>
+          </div>
+          <div class="project-preview-item" data-preview="1" hidden>
           <a class="project-card project-card-link" href="pages/containerised-web-app-deployment.html" aria-label="View Containerised Web App Deployment case study">
             <div class="project-art art-deploy"><span class="art-symbol" aria-hidden="true">✳</span>
               <div class="pipeline" aria-hidden="true"><span>Build</span><b>→</b><span>Deploy</span><b>→</b><span>Check</span></div>
@@ -76,8 +99,25 @@
               <h3>Containerised Web App Deployment</h3>
               <p>Building frontend containers, configuring Nginx routing, and testing automated rollback for deployment failures.</p>
               <p class="project-note">Team project · frontend & rollback contributions</p>
+              <span class="project-cta">View case study <span aria-hidden="true">↗</span></span>
             </div>
           </a>
+          </div>
+          <div class="project-preview-item" data-preview="2" hidden>
+          <a class="project-card project-card-link" href="pages/personalised-clothing-store.html" aria-label="View Personalised Clothing Store case study">
+            <div class="project-art art-store"><span class="art-symbol" aria-hidden="true">✿</span>
+              <div class="diagram" aria-hidden="true"><span>Requirements</span><b>↓</b><span>System design</span><b>↓</b><span>Test plans</span></div>
+            </div>
+            <div class="project-body">
+              <div class="tags"><span>Team leadership</span><span>UML</span><span>System design</span></div>
+              <h3>Personalised Clothing Store</h3>
+              <p>Leading requirements and system design for a proposed clothing customisation platform, from UML models to documentation reviews.</p>
+              <p class="project-note">Academic design project · not a deployed product</p>
+              <span class="project-cta">View case study <span aria-hidden="true">↗</span></span>
+            </div>
+          </a>
+          </div>
+          <div class="project-preview-item" data-preview="3" hidden>
           <a class="project-card project-card-link" href="pages/career-companion.html" aria-label="View Career Companion case study">
             <div class="project-art art-career"><span class="art-symbol" aria-hidden="true">♡</span>
               <div class="resume-card">
@@ -91,19 +131,10 @@
               <h3>Career Companion</h3>
               <p>A bilingual CV-building and job-discovery concept designed around more accessible recruitment experiences.</p>
               <p class="project-note">Figma Make prototype · proposed integrations</p>
+              <span class="project-cta">View case study <span aria-hidden="true">↗</span></span>
             </div>
           </a>
-          <a class="project-card project-card-link" href="pages/personalised-clothing-store.html" aria-label="View Personalised Clothing Store case study">
-            <div class="project-art art-store"><span class="art-symbol" aria-hidden="true">✿</span>
-              <div class="diagram" aria-hidden="true"><span>Requirements</span><b>↓</b><span>System design</span><b>↓</b><span>Test plans</span></div>
-            </div>
-            <div class="project-body">
-              <div class="tags"><span>Team leadership</span><span>UML</span><span>System design</span></div>
-              <h3>Personalised Clothing Store</h3>
-              <p>Leading requirements and system design for a proposed clothing customisation platform, from UML models to documentation reviews.</p>
-              <p class="project-note">Academic design project · not a deployed product</p>
-            </div>
-          </a>
+          </div>
         </div>
         <p class="work-footnote">Four projects, four different ways of learning and building. ✨</p>
       </div>
@@ -139,7 +170,7 @@
     </section>
   </main>
   <footer class="footer container"><span>Made with curiosity & a little bit of pink ♡</span><span>© <span id="year">2026</span> Tu</span></footer>
-  <a class="home-to-top" href="#home" aria-label="Back to top" title="Back to top">↑</a>
+  <a class="home-to-top" href="#top" aria-label="Back to top" title="Back to top">↑</a>
   <script src="scripts/back-to-top.js" defer></script>
 </body>
 
