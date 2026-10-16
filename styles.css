@@ -323,7 +323,7 @@ h2 {
 
 .work-section {
     background: #fff3ef;
-    padding: 68px 0 75px
+    padding: 80px 0 75px
 }
 
 .section-heading {
@@ -918,10 +918,6 @@ h2 {
 }
 
 /* Case study navigation and accessible project link */
-#work {
-    scroll-margin-top: 105px;
-}
-
 .project-title-link {
     color: inherit;
     text-decoration: none;
@@ -1273,3 +1269,47 @@ h2 {
         transition: none;
     }
 }
+
+/* Compact case-study introduction — scoped to the case page only. */
+@media (min-width: 1100px) {
+    .case-hero h1 {
+        max-width: none;
+        font-size: clamp(36px, 3.55vw, 53px);
+        letter-spacing: -2.4px;
+        white-space: nowrap;
+    }
+}
+.case-header { padding-top: 18px; }
+.case-back { margin-bottom: 14px; }
+.case-hero { padding: clamp(22px, 3vw, 36px); }
+.case-hero h1 { margin: 6px 0 12px; line-height: 1.12; }
+.case-hero p:not(.case-kicker) { max-width: 850px; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.45; margin-bottom: 0; }
+.case-kicker { margin-bottom: 6px; }
+.case-tags { margin-top: 15px; gap: 8px; }
+.case-tags span { padding: 5px 11px; font-size: 12px; }
+.case-main { padding-top: 20px; }
+.case-facts { gap: 14px; margin-bottom: 40px; }
+.case-fact { padding: 15px 18px; }
+.case-fact strong { margin-bottom: 4px; }
+.case-fact p { font-size: 15px; line-height: 1.45; }
+@media (max-width: 1099px) {
+    .case-hero h1 { font-size: clamp(34px, 5vw, 54px); letter-spacing: -1.7px; }
+}
+@media (max-width: 680px) {
+    .case-header { padding-top: 16px; }
+    .case-hero { padding: 24px 20px; }
+    .case-hero h1 { font-size: clamp(32px, 8vw, 46px); white-space: normal; }
+    .case-facts { margin-bottom: 32px; }
+}
+
+/* Case study hero — desktop refinement */
+@media (min-width: 1100px) {
+    .case-hero {
+      padding: 65px 44px;
+    }
+  
+    .case-hero h1 {
+      font-size: 60px;
+      line-height: 1.12;
+    }
+  }
