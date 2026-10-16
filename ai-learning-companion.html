@@ -36,59 +36,77 @@
           <p>Interactive, predefined-response prototype</p>
         </div>
       </div>
-      <section class="case-section" aria-labelledby="problem">
-        <h2 id="problem">01 / The challenge</h2>
-        <p>When learners encounter unfamiliar terminology or difficult concepts in online lessons, looking elsewhere for answers can interrupt their flow. For some learners with ADHD, switching tabs or following tangential explanations may make returning to the original lesson harder.</p>
-        <div class="case-callout">
-          <p><strong>Design question:</strong> How might we offer helpful explanations at the moment of confusion without turning the companion into another distraction?</p>
+      <div class="case-reading-layout">
+        <aside class="case-toc" aria-label="On this page">
+          <p class="case-toc-title">ON THIS PAGE</p>
+          <nav aria-label="Case study sections"><a href="#problem">01 · The challenge</a><a href="#approach">02 · Research</a><a href="#design">03 · Design decisions</a><a href="#prototype">04 · Prototype</a><a href="#feedback">05 · Feedback</a><a href="#reflection">06 · Reflection</a></nav>
+        </aside>
+        <div class="case-reading-content">
+          <div class="case-mobile-jump"><label for="case-jump">Jump to section</label><select id="case-jump">
+              <option value="">Choose a section…</option>
+              <option value="problem">01 · The challenge</option>
+              <option value="approach">02 · Research</option>
+              <option value="design">03 · Design decisions</option>
+              <option value="prototype">04 · Prototype</option>
+              <option value="feedback">05 · Feedback</option>
+              <option value="reflection">06 · Reflection</option>
+            </select></div>
+          <section class="case-section" aria-labelledby="problem">
+            <h2 id="problem">01 / The challenge</h2>
+            <p>When learners encounter unfamiliar terminology or difficult concepts in online lessons, looking elsewhere for answers can interrupt their flow. For some learners with ADHD, switching tabs or following tangential explanations may make returning to the original lesson harder.</p>
+            <div class="case-callout">
+              <p><strong>Design question:</strong> How might we offer helpful explanations at the moment of confusion without turning the companion into another distraction?</p>
+            </div>
+          </section>
+          <section class="case-section" aria-labelledby="approach">
+            <h2 id="approach">02 / Research-informed approach</h2>
+            <p>The team drew on research literature to identify barriers and challenge assumptions about how AI assistance should work. We developed and refined the concept through a research-informed co-design process, then gathered feedback from learners with ADHD on the prototype.</p>
+            <p>Rather than assuming that more AI assistance is always better, the design aims to keep learners in control and encourage them to return to the learning material.</p>
+          </section>
+          <section class="case-section" aria-labelledby="design">
+            <h2 id="design">03 / Designing the support</h2>
+            <p>The companion offers three different starting points, depending on what the learner needs.</p>
+            <div class="case-steps">
+              <div class="case-step"><b>✦ Explain it</b>
+                <p>Get a contextual explanation of a concept.</p>
+              </div>
+              <div class="case-step"><b>💡 Give me a hint</b>
+                <p>Receive a nudge instead of a complete answer.</p>
+              </div>
+              <div class="case-step"><b>✓ Check my understanding</b>
+                <p>Move from reading explanations to actively reflecting on learning.</p>
+              </div>
+            </div>
+            <p>Two additional interaction rules help prevent endless exploration: after <strong>three consecutive interactions</strong>, the companion suggests an understanding check; after <strong>four consecutive interactions</strong>, it reminds the learner to return to the lesson.</p>
+          </section>
+          <section class="case-section" aria-labelledby="prototype">
+            <h2 id="prototype">04 / What we prototyped</h2>
+            <p>The interactive prototype demonstrates how a course-aware assistant could sit alongside lesson content. It includes a draggable, resizable companion panel, contextual terminology support, hints, explanations and understanding checks.</p>
+            <div class="case-notice">
+              <p><strong>Prototype boundary:</strong> Responses, contextual content and interaction flows are predefined. The prototype demonstrates the intended user experience; it is not yet a fully autonomous AI agent or a live retrieval system.</p>
+            </div>
+            <p>A full implementation would require reliable retrieval of approved course content, handling of natural-language questions, safeguards against unsupported answers and further accessibility and usability testing.</p>
+          </section>
+          <section class="case-section" aria-labelledby="feedback">
+            <h2 id="feedback">05 / Feedback and refinements</h2>
+            <p>Learner feedback helped clarify the importance of concise explanations, staying focused on the lesson and avoiding over-reliance on AI. One concern was that instantly explaining everything might discourage independent thinking.</p>
+            <p>We used the feedback to refine the assistance flow, including hint-first support and prompts that encourage active understanding. Due to time constraints, these refinements were <strong>not put through a second round of participant testing</strong>.</p>
+          </section>
+          <section class="case-section" aria-labelledby="reflection">
+            <h2 id="reflection">06 / What I learned</h2>
+            <p>This project reinforced that a helpful AI experience isn't necessarily one that answers every question immediately. Designing support also means deciding when to offer less help, when to check understanding and when to guide someone back to their original task.</p>
+            <p>My next steps would be to test the revised interactions with learners, evaluate whether the reminders feel supportive rather than disruptive, and explore how a full system could ground its answers in verified course materials.</p>
+          </section>
         </div>
-      </section>
-      <section class="case-section" aria-labelledby="approach">
-        <h2 id="approach">02 / Research-informed approach</h2>
-        <p>The team drew on research literature to identify barriers and challenge assumptions about how AI assistance should work. We developed and refined the concept through a research-informed co-design process, then gathered feedback from learners with ADHD on the prototype.</p>
-        <p>Rather than assuming that more AI assistance is always better, the design aims to keep learners in control and encourage them to return to the learning material.</p>
-      </section>
-      <section class="case-section" aria-labelledby="design">
-        <h2 id="design">03 / Designing the support</h2>
-        <p>The companion offers three different starting points, depending on what the learner needs.</p>
-        <div class="case-steps">
-          <div class="case-step"><b>✦ Explain it</b>
-            <p>Get a contextual explanation of a concept.</p>
-          </div>
-          <div class="case-step"><b>💡 Give me a hint</b>
-            <p>Receive a nudge instead of a complete answer.</p>
-          </div>
-          <div class="case-step"><b>✓ Check my understanding</b>
-            <p>Move from reading explanations to actively reflecting on learning.</p>
-          </div>
-        </div>
-        <p>Two additional interaction rules help prevent endless exploration: after <strong>three consecutive interactions</strong>, the companion suggests an understanding check; after <strong>four consecutive interactions</strong>, it reminds the learner to return to the lesson.</p>
-      </section>
-      <section class="case-section" aria-labelledby="prototype">
-        <h2 id="prototype">04 / What we prototyped</h2>
-        <p>The interactive prototype demonstrates how a course-aware assistant could sit alongside lesson content. It includes a draggable, resizable companion panel, contextual terminology support, hints, explanations and understanding checks.</p>
-        <div class="case-notice">
-          <p><strong>Prototype boundary:</strong> Responses, contextual content and interaction flows are predefined. The prototype demonstrates the intended user experience; it is not yet a fully autonomous AI agent or a live retrieval system.</p>
-        </div>
-        <p>A full implementation would require reliable retrieval of approved course content, handling of natural-language questions, safeguards against unsupported answers and further accessibility and usability testing.</p>
-      </section>
-      <section class="case-section" aria-labelledby="feedback">
-        <h2 id="feedback">05 / Feedback and refinements</h2>
-        <p>Learner feedback helped clarify the importance of concise explanations, staying focused on the lesson and avoiding over-reliance on AI. One concern was that instantly explaining everything might discourage independent thinking.</p>
-        <p>We used the feedback to refine the assistance flow, including hint-first support and prompts that encourage active understanding. Due to time constraints, these refinements were <strong>not put through a second round of participant testing</strong>.</p>
-      </section>
-      <section class="case-section" aria-labelledby="reflection">
-        <h2 id="reflection">06 / What I learned</h2>
-        <p>This project reinforced that a helpful AI experience isn't necessarily one that answers every question immediately. Designing support also means deciding when to offer less help, when to check understanding and when to guide someone back to their original task.</p>
-        <p>My next steps would be to test the revised interactions with learners, evaluate whether the reminders feel supportive rather than disruptive, and explore how a full system could ground its answers in verified course materials.</p>
-      </section>
+      </div>
       <div class="case-next">
         <h2>Thanks for exploring this project ✳</h2>
         <p>Curious about the rest of my work?</p><a href="index.html#work">← Back to all projects</a>
       </div>
     </div>
   </main>
-  <footer class="footer container"><span>Made with curiosity and a little sparkle ✳</span><a href="index.html#home">Back to home ↑</a></footer>
+  <footer class="footer container"><span>Made with curiosity and a little sparkle ✳</span><a href="index.html#home">Back to home ↑</a></footer><a class="case-to-top" href="#main" aria-label="Back to top" title="Back to top">↑</a>
+  <script src="case-navigation.js" defer></script>
 </body>
 
 </html>
