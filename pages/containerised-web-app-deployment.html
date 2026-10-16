@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A case study of containerising and deploying a web application with Docker, Nginx, Docker Swarm, AWS and CI/CD.">
+  <title>Containerised Web App Deployment | Tu</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/case-study.css">
+  <link rel="stylesheet" href="../styles/devops-case.css">
+</head>
+
+<body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation"><a class="logo" href="../index.html#home" aria-label="Tu, back to home">Tu<span class="logo-dot">✳</span></a>
+      <div class="nav-links"><a href="../index.html#work">My work</a><a href="../index.html#about">About</a><a href="../index.html#contact">Say hello</a></div>
+    </nav>
+  </header>
+  <main id="main">
+    <div class="container case-header"><a class="case-back" href="../index.html#work">← Back to selected work</a>
+      <div class="case-hero devops-hero">
+        <p class="case-kicker">PROJECT CASE STUDY / CLOUD + DEVOPS</p>
+        <h1>From code to cloud<span class="case-star">. ✳</span></h1>
+        <p>Containerising a web application, validating releases in staging, and exploring safer deployment and recovery workflows.</p>
+        <div class="case-tags"><span>Docker &amp; Nginx</span><span>AWS EC2</span><span>Docker Swarm</span><span>Jenkins CI/CD</span></div>
+      </div>
+    </div>
+    <div class="container case-main">
+      <div class="case-facts">
+        <div class="case-fact"><strong>Focus</strong>
+          <p>Containerised deployment, release validation and recovery</p>
+        </div>
+        <div class="case-fact"><strong>My contribution</strong>
+          <p>Frontend containerisation, routing and green-stack / rollback work</p>
+        </div>
+        <div class="case-fact"><strong>Context</strong>
+          <p>University team project · Systems Deployment and Operations</p>
+        </div>
+      </div>
+      <div class="case-reading-layout">
+        <aside class="case-toc" aria-label="On this page">
+          <p class="case-toc-title">ON THIS PAGE</p>
+          <nav aria-label="Case study sections"><a href="#problem">01 · The challenge</a><a href="#architecture">02 · Architecture</a><a href="#contribution">03 · My contribution</a><a href="#pipeline">04 · CI/CD workflow</a><a href="#recovery">05 · Deployment &amp; recovery</a><a href="#reflection">06 · Reflection</a></nav>
+        </aside>
+        <div class="case-reading-content">
+          <div class="case-mobile-jump"><label for="case-jump">Jump to section</label><select id="case-jump">
+              <option value="">Choose a section…</option>
+              <option value="problem">01 · The challenge</option>
+              <option value="architecture">02 · Architecture</option>
+              <option value="contribution">03 · My contribution</option>
+              <option value="pipeline">04 · CI/CD workflow</option>
+              <option value="recovery">05 · Deployment &amp; recovery</option>
+              <option value="reflection">06 · Reflection</option>
+            </select></div>
+          <section class="case-section" aria-labelledby="problem">
+            <h2 id="problem">01 / The challenge</h2>
+            <p>Building a web application is only part of delivering it. The team also needed a repeatable way to package frontend and backend services, configure networking, test changes before release and verify that deployed services were healthy.</p>
+            <div class="case-callout">
+              <p><strong>Engineering question:</strong> How can we move a multi-service application from source code to a running environment while reducing deployment risk?</p>
+            </div>
+          </section>
+          <section class="case-section" aria-labelledby="architecture">
+            <h2 id="architecture">02 / How the system fits together</h2>
+            <p>The application combined a built frontend served by Nginx with a Django API. Docker images provided consistent runtime environments, while Docker Swarm stack definitions described the deployed services on AWS EC2.</p>
+            <div class="devops-diagram" role="img" aria-label="Architecture diagram: browser requests reach Nginx serving the frontend; Nginx proxies API requests to a Django API service. Docker images are deployed as Docker Swarm services on AWS EC2.">
+              <div class="devops-node">Browser <span>Web requests</span></div>
+              <div class="devops-arrow">↓</div>
+              <div class="devops-node highlight">Nginx + frontend <span>Static site · /api/ proxy · /healthz/</span></div>
+              <div class="devops-arrow">↓ API requests</div>
+              <div class="devops-node">Django API <span>Gunicorn · /readyz/</span></div>
+              <div class="devops-caption">Docker images → Docker Swarm services → AWS EC2</div>
+            </div>
+            <p>The frontend's multi-stage Dockerfile builds the Node application, then copies the compiled output into a smaller Nginx runtime image. Nginx handles client-side routes and forwards <code>/api/</code> requests to the backend service.</p>
+          </section>
+          <section class="case-section" aria-labelledby="contribution">
+            <h2 id="contribution">03 / What I worked on</h2>
+            <div class="case-steps">
+              <div class="case-step"><b>✳ Frontend containerisation</b>
+                <p>Worked with the production frontend image, using a Node build stage and Nginx to serve the compiled application.</p>
+              </div>
+              <div class="case-step"><b>↗ Routing and health checks</b>
+                <p>Worked with frontend routing and API proxy configuration; checked deployed endpoints during troubleshooting.</p>
+              </div>
+              <div class="case-step"><b>↩ Green deployment and recovery</b>
+                <p>Authored the green Docker Swarm stack configuration and worked through rollback testing.</p>
+              </div>
+            </div>
+            <p>The green stack used separate published ports (<code>8080</code> for the frontend and <code>8001</code> for the API), allowing it to be deployed alongside the original stack where infrastructure permitted.</p>
+            <div class="case-notice">
+              <p><strong>Teamwork note:</strong> The Jenkins pipeline was a team deliverable. I describe its overall flow below without claiming sole authorship.</p>
+            </div>
+          </section>
+          <section class="case-section" aria-labelledby="pipeline">
+            <h2 id="pipeline">04 / From commit to deployment</h2>
+            <p>The team's Jenkinsfile defined a staged workflow for building and checking the application before production deployment.</p>
+            <div class="devops-flow">
+              <div><b>01</b><span>Checkout &amp; build images</span></div>
+              <div><b>02</b><span>Backend tests &amp; Trivy scan</span></div>
+              <div><b>03</b><span>Publish versioned images</span></div>
+              <div><b>04</b><span>Deploy to staging</span></div>
+              <div><b>05</b><span>Smoke &amp; Playwright tests</span></div>
+              <div><b>06</b><span>Deploy &amp; verify production</span></div>
+            </div>
+            <p>The staging checks covered frontend availability, API health and readiness, and a version endpoint. Production deployment checked expected replica counts and API readiness.</p>
+            <div class="case-notice">
+              <p><strong>Technical detail:</strong> In the shared Jenkinsfile, Trivy used <code>--exit-code 0</code>, so vulnerability findings were reported rather than used as a blocking release gate.</p>
+            </div>
+          </section>
+          <section class="case-section" aria-labelledby="recovery">
+            <h2 id="recovery">05 / Deployment and recovery</h2>
+            <p>To explore a safer release strategy, I prepared a separate green stack with its own published ports and readiness checks. This was a foundation for blue-green deployment, where a candidate release can be evaluated separately before traffic is switched.</p>
+            <div class="devops-compare">
+              <div><span class="devops-pill">Existing stack</span><strong>Blue / current</strong>
+                <p>Frontend on port 80<br>API on port 8000</p>
+              </div>
+              <div><span class="devops-pill green">Candidate stack</span><strong>Green</strong>
+                <p>Frontend on port 8080<br>API on port 8001</p>
+              </div>
+            </div>
+            <p>During our earlier rollback testing, we checked a healthy endpoint, deliberately tested an unavailable endpoint, invoked a Docker Swarm service rollback and checked recovery. The complete original rollback script and final traffic-switching configuration have not yet been recovered, so I distinguish that testing from a verified, fully automated production rollback pipeline.</p>
+          </section>
+          <section class="case-section" aria-labelledby="reflection">
+            <h2 id="reflection">06 / What I learned</h2>
+            <p>This project helped me connect application development with the operational decisions required to run software: container boundaries, proxy configuration, service health, staged validation and recovery planning.</p>
+            <p>It also showed me why deployment success needs more than a running container. A stronger production workflow would make security scans enforceable, verify application behaviour after switching traffic, and document rollback procedures and database migration compatibility.</p>
+          </section>
+        </div>
+      </div>
+      <div class="case-next">
+        <h2>Thanks for exploring this project ✳</h2>
+        <p>Want to see more of my work?</p><a href="../index.html#work">← Back to all projects</a>
+      </div>
+    </div>
+  </main>
+  <footer class="footer container"><span>Made with curiosity and a little sparkle ✳</span>
+  <script src="../scripts/case-navigation.js" defer></script>
+</body>
+
+</html>

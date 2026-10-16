@@ -1,0 +1,126 @@
+/* DevOps case study only — shared case-study styles remain unchanged. */
+.devops-hero {
+    background: #fff0bc;
+}
+
+.devops-hero .case-star {
+    color: #d58f70;
+}
+
+.devops-diagram {
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: #fffdf7;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 26px 0;
+    text-align: center;
+}
+
+.devops-node {
+    background: white;
+    border: 1px solid #eadfc9;
+    border-radius: 14px;
+    padding: 13px 24px;
+    width: min(100%, 410px);
+    font-weight: 800;
+}
+
+.devops-node span {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+.devops-node.highlight {
+    background: #fff0bc;
+}
+
+.devops-arrow {
+    color: #886c63;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.devops-caption {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+.devops-flow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.devops-flow>div {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 17px;
+    border-radius: 15px;
+    background: #fff7de;
+}
+
+.devops-flow b {
+    color: #a36c43;
+    font-size: 13px;
+}
+
+.devops-flow span {
+    font-size: 14px;
+    font-weight: 750;
+}
+
+.devops-compare {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 24px 0;
+}
+
+.devops-compare>div {
+    border: 1px solid var(--line);
+    border-radius: 17px;
+    padding: 20px;
+    background: #fffdf7;
+}
+
+.devops-compare strong {
+    display: block;
+    font-size: 19px;
+    margin: 12px 0 6px;
+}
+
+.devops-compare p {
+    font-size: 15px;
+    margin: 0;
+}
+
+.devops-pill {
+    display: inline-block;
+    background: #e8e1f8;
+    border-radius: 99px;
+    padding: 5px 11px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.devops-pill.green {
+    background: #d9f0d7;
+}
+
+@media (max-width: 600px) {
+
+    .devops-flow,
+    .devops-compare {
+        grid-template-columns: 1fr;
+    }
+}
