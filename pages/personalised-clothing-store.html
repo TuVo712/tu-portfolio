@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personalised Clothing Store: a university team project exploring requirements, UML, architecture and testing for a clothing-customisation platform.">
+  <title>Personalised Clothing Store | Tu</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/case-study.css">
+  <link rel="stylesheet" href="../styles/clothing-case.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="nav container" aria-label="Main navigation">
+    <a class="logo" href="../index.html#home" aria-label="Tu, back to home">Tu<span class="logo-dot">✳</span></a>
+    <div class="nav-links"><a href="../index.html#work">My work</a><a href="../index.html#about">About</a><a href="../index.html#contact">Say hello</a></div>
+  </nav>
+</header>
+<main id="main">
+  <div class="container case-header">
+    <a class="case-back" href="../index.html#work">← Back to selected work</a>
+    <div class="case-hero clothing-hero">
+      <p class="case-kicker">PROJECT CASE STUDY / SYSTEMS ANALYSIS + DESIGN</p>
+      <h1>Made to fit your imagination<span class="case-star">. ✿</span></h1>
+      <p>Designing the foundations of a personalised clothing store, from customer requirements to system models, UI concepts and test plans.</p>
+      <div class="case-tags"><span>Team leadership</span><span>Requirements</span><span>UML</span><span>System design</span></div>
+    </div>
+  </div>
+  <div class="container case-main">
+    <div class="case-facts">
+      <div class="case-fact"><strong>Focus</strong><p>Turning a custom-clothing shopping concept into a structured software design</p></div>
+      <div class="case-fact"><strong>My contribution</strong><p>Team coordination, UML refinement, documentation and prototype review</p></div>
+      <div class="case-fact"><strong>Deliverable</strong><p>Academic system-design documentation and UI mockups</p></div>
+    </div>
+    <div class="case-reading-layout">
+      <aside class="case-toc" aria-label="On this page">
+        <p class="case-toc-title">ON THIS PAGE</p>
+        <nav aria-label="Case study sections">
+          <a href="#challenge">01 · The challenge</a>
+          <a href="#requirements">02 · Requirements</a>
+          <a href="#architecture">03 · System design</a>
+          <a href="#contribution">04 · My contribution</a>
+          <a href="#validation">05 · Testing &amp; artefacts</a>
+          <a href="#reflection">06 · Reflection</a>
+        </nav>
+      </aside>
+      <div class="case-reading-content">
+        <div class="case-mobile-jump">
+          <label for="case-jump">Jump to section</label>
+          <select id="case-jump">
+            <option value="">Choose a section…</option>
+            <option value="challenge">01 · The challenge</option>
+            <option value="requirements">02 · Requirements</option>
+            <option value="architecture">03 · System design</option>
+            <option value="contribution">04 · My contribution</option>
+            <option value="validation">05 · Testing &amp; artefacts</option>
+            <option value="reflection">06 · Reflection</option>
+          </select>
+        </div>
+        <section class="case-section" aria-labelledby="challenge">
+          <h2 id="challenge">01 / The challenge</h2>
+          <p>Most online clothing stores let shoppers choose from predefined products. Our proposed platform explored a more personal experience: allowing customers to customise clothing with their own text, images and patches before purchasing.</p>
+          <div class="case-callout clothing-callout"><p><strong>Design question:</strong> How could we turn a flexible clothing-customisation idea into a system with clear requirements, understandable user journeys and a maintainable architecture?</p></div>
+          <p>Rather than building a live e-commerce service, this academic project focused on <strong>analysis, modelling and design</strong>.</p>
+        </section>
+        <section class="case-section" aria-labelledby="requirements">
+          <h2 id="requirements">02 / Understanding the requirements</h2>
+          <p>We identified the main customer journeys and refined the proposed scope into a more manageable set of features. The concept covered browsing clothing categories, searching for products, personalising designs and progressing towards a purchase.</p>
+          <div class="clothing-feature-grid">
+            <div><span aria-hidden="true">✿</span><strong>Explore products</strong><p>Browse clothing categories and search for specific items as distinct actions.</p></div>
+            <div><span aria-hidden="true">✎</span><strong>Make it yours</strong><p>Personalise garments with text, images or patches and save design ideas.</p></div>
+            <div><span aria-hidden="true">♡</span><strong>Preview &amp; decide</strong><p>Explore a proposed camera-based fit preview, shopping cart and account flow.</p></div>
+          </div>
+          <p>Features such as virtual fitting were <strong>proposed capabilities</strong>, not working computer-vision functionality. Separating requirements from implementation helped keep our documentation honest and testable.</p>
+        </section>
+        <section class="case-section" aria-labelledby="architecture">
+          <h2 id="architecture">03 / Designing the system</h2>
+          <p>We used UML models to describe how users, application components and data would interact. The design work included sequence, class and activity diagrams, alongside discussion of the MVC architectural pattern and Factory Method and Singleton design patterns.</p>
+          <div class="clothing-model" role="img" aria-label="Conceptual design flow: requirements inform UML models, which guide interface mockups and test planning">
+            <div><span>01</span><strong>Requirements</strong><small>User stories &amp; scope</small></div><b aria-hidden="true">→</b>
+            <div><span>02</span><strong>System models</strong><small>UML &amp; patterns</small></div><b aria-hidden="true">→</b>
+            <div><span>03</span><strong>Validation plan</strong><small>UI &amp; test cases</small></div>
+          </div>
+          <p class="clothing-caption">Simplified overview of the design process — not an implementation architecture or an exported UML diagram.</p>
+          <p>The diagrams provided different perspectives on the same system: interactions over time, relationships between classes and the sequence of user activities.</p>
+        </section>
+        <section class="case-section" aria-labelledby="contribution">
+          <h2 id="contribution">04 / My role in the team</h2>
+          <p>My main responsibility was keeping the team’s work coordinated and coherent, while also contributing directly to the system-design artefacts.</p>
+          <div class="case-steps">
+            <div class="case-step"><b>✳ Coordinating the work</b><p>Assigned responsibilities and deadlines, followed up on progress and managed communication with the lecturer.</p></div>
+            <div class="case-step"><b>✎ Refining the models</b><p>Redrew two sequence diagrams and helped draft the class and activity diagrams.</p></div>
+            <div class="case-step"><b>♡ Bringing the pieces together</b><p>Structured the assessment documentation, refined Figma mockups and reviewed teammates’ work for consistency.</p></div>
+          </div>
+          <p>This was a collaborative assignment: the full requirements set and design package were team outputs, not work I completed alone.</p>
+        </section>
+        <section class="case-section" aria-labelledby="validation">
+          <h2 id="validation">05 / Planning how to validate it</h2>
+          <p>We connected requirements to test planning so that proposed features could be evaluated against expected behaviour. The documentation included testing considerations and traceability between the system’s requirements and its design.</p>
+          <div class="clothing-example"><div class="clothing-example-head"><span>EXAMPLE REQUIREMENT</span><span>Browsing</span></div><p>As a guest user, I want to browse clothing categories so that I can explore available items.</p><div class="clothing-example-rule"><strong>Example acceptance check</strong><span>A guest can select a category and view its available products without signing in.</span></div></div>
+          <div class="case-notice"><p><strong>Project scope:</strong> These are design and test-planning artefacts. The project should not be mistaken for a deployed online store or evidence that every proposed feature was implemented and tested.</p></div>
+          <p>If shareable UML diagrams or interface mockups become available, this is where they can be added to make the design process more tangible.</p>
+        </section>
+        <section class="case-section" aria-labelledby="reflection">
+          <h2 id="reflection">06 / What I learned</h2>
+          <p>This project showed me that software engineering begins well before the first line of production code. Good requirements and diagrams help a team uncover ambiguity, discuss trade-offs and build a shared understanding of what the system should do.</p>
+          <p>It also strengthened my experience coordinating people and reviewing work across different deliverables. If the concept were developed further, I would prioritise validating the customisation journey with users, then building and testing a small end-to-end slice before expanding to features such as virtual fitting.</p>
+        </section>
+      </div>
+    </div>
+    <div class="case-next"><h2>Thanks for exploring this project ✳</h2><p>From first ideas to clearer systems, there's always something new to learn.</p></div>
+  </div>
+</main>
+<footer class="footer container"><span>Made with curiosity and a little sparkle ✳</span></footer>
+<a class="case-to-top" href="#main" aria-label="Back to top" title="Back to top">↑</a>
+<script src="../scripts/case-navigation.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/* Personalised Clothing Store: page-specific accents and diagrams. */
+.clothing-hero {
+    background: #C9DDBF;
+}
+
+.clothing-hero .case-star {
+    color: #df91a6;
+}
+
+.clothing-callout {
+    background: #fff0c4;
+}
+
+.clothing-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.clothing-feature-grid>div {
+    background: #fffaf6;
+    border: 1px solid #efdcd3;
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.clothing-feature-grid span {
+    display: block;
+    font-size: 27px;
+    color: #ce8096;
+    margin-bottom: 9px;
+}
+
+.clothing-feature-grid strong {
+    display: block;
+    color: var(--ink);
+    font-size: 15px;
+}
+
+.clothing-feature-grid p {
+    margin: 8px 0 0;
+    font-size: 14px;
+}
+
+.clothing-model {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    margin: 27px 0 10px;
+}
+
+.clothing-model>div {
+    flex: 1;
+    min-width: 0;
+    background: #fff6ee;
+    border: 1px solid #f1dccc;
+    border-radius: 17px;
+    padding: 18px 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.clothing-model>div span {
+    font-size: 12px;
+    font-weight: 800;
+    color: #bf7b8f;
+}
+
+.clothing-model>div strong {
+    font-size: 15px;
+    color: var(--ink);
+}
+
+.clothing-model>div small {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.clothing-model>b {
+    align-self: center;
+    color: #bf8195;
+    font-size: 23px;
+}
+
+.case-section p.clothing-caption {
+    margin-top: 0;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.clothing-example {
+    margin: 24px 0;
+    border: 1px solid #eedbd4;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #fffaf6;
+}
+
+.clothing-example-head {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 13px 19px;
+    background: #ffebdf;
+    color: #8a5869;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.clothing-example>p {
+    padding: 20px 19px 7px;
+    margin: 0;
+    color: var(--ink);
+    font-weight: 650;
+}
+
+.clothing-example-rule {
+    display: grid;
+    gap: 5px;
+    margin: 8px 19px 19px;
+    padding: 15px;
+    border-radius: 12px;
+    background: #fff;
+    font-size: 14px;
+}
+
+.clothing-example-rule strong {
+    color: var(--ink);
+}
+
+@media (max-width: 720px) {
+    .clothing-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .clothing-model {
+        flex-direction: column;
+    }
+
+    .clothing-model>b {
+        transform: rotate(90deg);
+    }
+}
