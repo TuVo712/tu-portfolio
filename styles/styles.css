@@ -933,3 +933,19 @@ h2 {
     outline-offset: 5px;
     transform: translateY(-5px);
 }
+
+/* Homepage back-to-top control */
+.home-to-top {
+  position: fixed; right: 26px; bottom: 26px; z-index: 30;
+  width: 46px; height: 46px; display: grid; place-items: center;
+  border-radius: 50%; background: #f5d5e4; color: var(--ink);
+  border: 1px solid #e9b7cd; box-shadow: 0 8px 22px #322b3122;
+  font-size: 25px; font-weight: 800; text-decoration: none;
+  opacity: 0; visibility: hidden; transform: translateY(10px);
+  transition: opacity .2s, transform .2s, visibility .2s;
+}
+.home-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.home-to-top:hover { background: #eec2d7; }
+.home-to-top:focus-visible { outline: 3px solid #875a96; outline-offset: 3px; }
+@media (max-width: 850px) { .home-to-top { right: 16px; bottom: 18px; } }
+@media (prefers-reduced-motion: reduce) { .home-to-top { transition: none; } }

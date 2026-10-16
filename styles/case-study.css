@@ -382,3 +382,10 @@
       line-height: 1.12;
     }
   }
+
+/* Figma prototype action */
+.case-prototype-link {
+  background: var(--ink); color: white;
+  margin: 12px 0 4px;
+}
+.case-prototype-link:hover { color: white; }
