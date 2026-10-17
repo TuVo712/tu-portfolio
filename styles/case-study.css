@@ -525,3 +525,21 @@
     outline-offset: 4px;
     border-radius: 3px;
 }
+
+
+/* Subtle back-to-top button — Career Companion */
+
+.case-to-top {
+    width: 44px;
+    height: 44px;
+    background: #FFF9F5;
+    color: #B47A98;
+    border: 1px solid #EAD5DF;
+    box-shadow: 0 3px 12px rgba(90, 60, 75, 0.06);
+}
+
+.case-to-top:hover {
+    background: #F9EAF1;
+    color: #98617F;
+    border-color: #DDAAC4;
+}

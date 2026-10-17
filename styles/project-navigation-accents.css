@@ -1,0 +1,54 @@
+/* Project-specific navigation accents. Load AFTER case-study.css. */
+:root {
+  --project-soft: #F8E2D5;
+  --project-accent: #C77E68;
+  --project-ink: #775044;
+}
+body.project-ai {
+  --project-soft: #E9DFF9;
+  --project-accent: #A477C9;
+  --project-ink: #775B93;
+}
+body.project-devops {
+  --project-soft: #FFE5B0;
+  --project-accent: #C8894E;
+  --project-ink: #88603F;
+}
+body.project-clothing {
+  --project-soft: #D1E2C8;
+  --project-accent: #6D9870;
+  --project-ink: #537456;
+}
+body.project-beaute {
+  --project-soft: #F8E2D5;
+  --project-accent: #C77E68;
+  --project-ink: #946451;
+}
+.case-toc a.active,
+.case-toc a[aria-current="true"] {
+  background: var(--project-soft);
+  border-left-color: var(--project-accent);
+  color: var(--ink);
+}
+.case-toc a:hover,
+.case-toc a:focus-visible {
+  background: var(--project-soft);
+  color: var(--ink);
+}
+.case-to-top {
+  width: 44px;
+  height: 44px;
+  background: #FFF9F5;
+  color: var(--project-ink);
+  border: 1px solid var(--project-soft);
+  box-shadow: 0 3px 12px rgba(90,60,50,.06);
+  font-size: 23px;
+}
+.case-to-top:hover {
+  background: var(--project-soft);
+  border-color: var(--project-accent);
+  color: var(--project-ink);
+}
+.case-to-top:focus-visible {
+  outline-color: var(--project-accent);
+}
