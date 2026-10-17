@@ -1,0 +1,138 @@
+.beaute-hero {
+    background: #f8e2d5
+}
+
+.beaute-hero .case-star {
+    color: #c77e68;
+    white-space: nowrap
+}
+
+.beaute-callout {
+    background: #fff0e7;
+    border-left: 4px solid #c77e68
+}
+
+.beaute-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    margin: 24px 0
+}
+
+.beaute-flow>div {
+    flex: 1;
+    min-width: 0;
+    background: #f8e2d5;
+    border: 1px solid #ebc5b2;
+    border-radius: 16px;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px
+}
+
+.beaute-flow>div span {
+    color: #9a6253;
+    font-weight: 800;
+    font-size: 12px
+}
+
+.beaute-flow>div strong {
+    color: #352c30
+}
+
+.beaute-flow>div small {
+    color: #805a50
+}
+
+.beaute-flow>b {
+    align-self: center;
+    color: #9a6253
+}
+
+.beaute-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 22px 0
+}
+
+.beaute-feature-grid>div {
+    background: #fff8f4;
+    border: 1px solid #ebd9d0;
+    border-radius: 16px;
+    padding: 18px
+}
+
+.beaute-feature-grid span {
+    color: #c77e68;
+    font-size: 26px;
+    display: block;
+    margin-bottom: 8px
+}
+
+.beaute-feature-grid strong {
+    display: block
+}
+
+.beaute-feature-grid p {
+    font-size: 14px;
+    margin: 8px 0 0
+}
+
+.beaute-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0 24px
+}
+
+.beaute-stack span {
+    background: #f8e2d5;
+    color: #654a42;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 700
+}
+
+
+/* Beauté d’Amies — project-specific navigation accents */
+
+.case-toc a.active,
+.case-toc a[aria-current="true"] {
+  background: #F8E2D5;
+  border-left-color: #C77E68;
+  color: #594039;
+}
+
+/* Subtle back-to-top button */
+.case-to-top {
+  background: #FFF9F5;
+  color: #946451;
+  border: 1px solid #E9D7CC;
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 3px 12px rgba(90, 60, 50, 0.06);
+}
+
+.case-to-top:hover {
+  background: #F8E2D5;
+  border-color: #C77E68;
+  color: #775044;
+}
+
+
+@media(max-width:700px) {
+    .beaute-flow {
+        flex-direction: column
+    }
+
+    .beaute-flow>b {
+        transform: rotate(90deg)
+    }
+
+    .beaute-feature-grid {
+        grid-template-columns: 1fr
+    }
+}
